@@ -17,5 +17,13 @@ angular.module('persistentInterViewApp')
   								{image:'http://storage.googleapis.com/vinaymavi/treefrog1.jpg'},
   								{image:'http://storage.googleapis.com/vinaymavi/tumblr_static_slide2_butterfly.jpg'}
   								];
-  
+  								
+  $scope.submitForm = function(isValid) {
+		// check to make sure the form is completely valid
+		if (isValid) { 
+			alert('our form is amazing');
+		}
+
+	}
+
   });
