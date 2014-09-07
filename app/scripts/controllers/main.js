@@ -19,8 +19,11 @@ angular.module('persistentInterViewApp')
   								];
   // ImageDesc Object Return from $resource.
   $scope.imagesDesc =  imageDesc.get();
+  $scope.curImgDesc;
   $scope.$on('SLIDE_CHANGE',function(event,index){
-  	console.log(index);
+  	  	
+  	$scope.curImgDesc = $scope.imagesDesc[$scope.slides[index].image];
+  	console.log($scope.curImgDesc);
   })
   $scope.submitForm = function(isValid) {
 		// check to make sure the form is completely valid

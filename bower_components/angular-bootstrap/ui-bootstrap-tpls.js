@@ -464,6 +464,7 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
       }
       self.currentSlide = nextSlide;
       currentIndex = nextIndex;
+      $rootScope.$broadcast('SLIDE_CHANGE',currentIndex);
       //every time you change slides, reset the timer
       restartTimer();
     }
@@ -487,7 +488,7 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
 
     //Prevent this user-triggered transition from occurring if there is already one in progress
     if (!$scope.$currentTransition) {
-      $rootScope.$broadcast('SLIDE_CHANGE',newIndex);
+      
       return self.select(slides[newIndex], 'next');
     }
   };
@@ -496,8 +497,7 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
     var newIndex = currentIndex - 1 < 0 ? slides.length - 1 : currentIndex - 1;
 
     //Prevent this user-triggered transition from occurring if there is already one in progress
-    if (!$scope.$currentTransition) {
-      $rootScope.$broadcast('SLIDE_CHANGE',newIndex);
+    if (!$scope.$currentTransition) {    
       return self.select(slides[newIndex], 'prev');
     }
   };
