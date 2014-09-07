@@ -42,6 +42,10 @@
           <td><b>Title</b></td>
           <td><b>Description</b></td>
         </tr>
+        <tr ng-repeat='imageDesc in imagesDesc'>
+          <td>{{imageDesc.title}}</td>
+          <td>{{imageDesc.desc}}</td>
+        </tr>
     </table>
   </div>
 </div>

@@ -411,7 +411,7 @@ angular.module('ui.bootstrap.buttons', [])
 *
 */
 angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
-.controller('CarouselController', ['$scope', '$timeout', '$transition', function ($scope, $timeout, $transition) {
+.controller('CarouselController', ['$scope', '$timeout', '$transition','$rootScope', function ($scope, $timeout, $transition,$rootScope) {
   var self = this,
     slides = self.slides = $scope.slides = [],
     currentIndex = -1,
@@ -487,6 +487,7 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
 
     //Prevent this user-triggered transition from occurring if there is already one in progress
     if (!$scope.$currentTransition) {
+      $rootScope.$broadcast('SLIDE_CHANGE',newIndex);
       return self.select(slides[newIndex], 'next');
     }
   };
@@ -496,6 +497,7 @@ angular.module('ui.bootstrap.carousel', ['ui.bootstrap.transition'])
 
     //Prevent this user-triggered transition from occurring if there is already one in progress
     if (!$scope.$currentTransition) {
+      $rootScope.$broadcast('SLIDE_CHANGE',newIndex);
       return self.select(slides[newIndex], 'prev');
     }
   };
