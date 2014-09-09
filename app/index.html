@@ -14,7 +14,7 @@
     <!-- build:css(.tmp) styles/main.css -->
     <!-- endbuild -->
   </head>
-  <body ng-app="persistentInterViewApp">
+  <body ng-app="persistentInterViewApp" ng-controller="MainCtrl"  ng-keypress="keypress($event)">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -22,10 +22,10 @@
     <!-- Add your site or application content here -->
     <div class="container">
      <section class='header '>
-      <h1>Persistent</h1>
+      <h1>Tak-Tak</h1>
      </section>
 
-      <div ng-include="'views/main.html'" ng-controller="MainCtrl"></div>
+      <div ng-include="views/main.html"></div>
     
     </div>
 
