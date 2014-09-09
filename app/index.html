@@ -13,6 +13,24 @@
     <!-- endbuild -->
     <!-- build:css(.tmp) styles/main.css -->
     <!-- endbuild -->
+    <style type="text/css" >
+      .text-area{
+        font-size: 18px;
+        width: 100%;       
+        overflow: auto;
+      }
+      .text-area span{
+        display: block;
+        float: left;
+        margin: 0px 5px 
+      }
+      textarea{
+        width: 100%;
+        min-height: 150px;
+        border:  none;
+
+      }
+    </style>
   </head>
   <body ng-app="persistentInterViewApp" ng-controller="MainCtrl"  ng-keypress="keypress($event)">
     <!--[if lt IE 7]>
@@ -21,12 +39,24 @@
 
     <!-- Add your site or application content here -->
     <div class="container">
+
      <section class='header '>
       <h1>Tak-Tak</h1>
+      <hr/>
      </section>
 
-      <div ng-include="views/main.html"></div>
+    <section class='text-area'>      
+      <span ng-repeat="dataText in dataTextArr track by $index" >{{dataText}}           
+      </span>
+    </section>
     
+    <hr/>
+      This is Typing program please type above paragraph.
+    <hr/>
+    <section style='font-size:18px;'>
+     <textarea  autofocus> </textarea>
+    </section>
+
     </div>
 
 

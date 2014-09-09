@@ -1,18 +1,3 @@
 {
-	"http://storage.googleapis.com/vinaymavi/garrotxa.jpg":{
-		"title":"Frist Image",
-		"desc" : "Frist Image Description."
-	},
-	"http://storage.googleapis.com/vinaymavi/pvi-header.jpg":{
-		"title":"Second Image",
-		"desc" : "Second Image Description."
-	},
-	"http://storage.googleapis.com/vinaymavi/treefrog1.jpg":{
-		"title":"Third Image",
-		"desc" : "Third Image Description."
-	},
-	"http://storage.googleapis.com/vinaymavi/tumblr_static_slide2_butterfly.jpg":{
-		"title":"Fourth Image",
-		"desc" : "Fourth Image Description."
-	}
+	"dataText" : "One of the key components of this class is the Application portion of each Module. The Application takes the math and programming knowledge that you have learned in the first part of the Module and applies the knowledge in solving an interesting practical problem. Specifically, the goal of the Application is to encourage you to think."
 }
