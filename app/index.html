@@ -30,6 +30,22 @@
         border:  none;
 
       }
+
+      .rightWrd{
+        background-color: white;
+        color: green;
+      }
+
+      .wrongWrd{
+        background-color: white;
+        color: red;        
+      }
+
+      .currentWrd{
+        background-color: rgba(218, 177, 14, 0.5);
+        color: black;          
+      }
+
     </style>
   </head>
   <body ng-app="persistentInterViewApp" ng-controller="MainCtrl" ng-keydown ="keydown($event)"  ng-keypress="keypress($event)">
@@ -40,26 +56,29 @@
     <!-- Add your site or application content here -->
     <div class="container">
 
-     <section class='header '>
+     <section class='header'>
       <h1>Tak-Tak<span style='font-size:14px'> beta </span></h1>
       <hr/>
      </section>
+
+    <progressbar class="progress-striped active" max="max" type='{{progessBarType}}' value="dynamic"><span style="color:black; white-space:nowrap;">{{dynamic}} / {{max}}</span></progressbar>
 
     <section class='text-area'>      
       <span ng-repeat="dataText in dataTextArr track by $index" >{{dataText}}           
       </span>
     </section>
-    
-      <table class="table table-hove">
-        <tr>
-          <td>This is Typing program please type above paragraph.</td>
-        </tr>
-      </table>
+    <br/>
 
     <section style='font-size:18px;'>
-     <textarea  autofocus class='inputArea' ></textarea>
+     <input type='text'  autofocus class='inputArea form-control' placeholder='Start Typing here............'/>
     </section>
-
+    
+    <section class='row' ng-show='testDone'>
+      <div class='col-lg-3'>{{currectKeyStrock/5}}</div>
+      <div class='col-lg-3'>{{currectWrdCount}},{{wrongWrdCount}}</div>
+      <div class='col-lg-3'>{{currectKeyStrock}}</div>
+      <div class='col-lg-3'>{{wrongKeyStrock}}</div>
+    </section>
     </div>
 
 
