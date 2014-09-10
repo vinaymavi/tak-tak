@@ -32,7 +32,7 @@
       }
     </style>
   </head>
-  <body ng-app="persistentInterViewApp" ng-controller="MainCtrl"  ng-keypress="keypress($event)">
+  <body ng-app="persistentInterViewApp" ng-controller="MainCtrl" ng-keydown ="keydown($event)"  ng-keypress="keypress($event)">
     <!--[if lt IE 7]>
       <p class="browsehappy">You are using an <strong>outdated</strong> browser. Please <a href="http://browsehappy.com/">upgrade your browser</a> to improve your experience.</p>
     <![endif]-->
@@ -41,7 +41,7 @@
     <div class="container">
 
      <section class='header '>
-      <h1>Tak-Tak</h1>
+      <h1>Tak-Tak<span style='font-size:14px'> beta </span></h1>
       <hr/>
      </section>
 
@@ -50,11 +50,14 @@
       </span>
     </section>
     
-    <hr/>
-      This is Typing program please type above paragraph.
-    <hr/>
+      <table class="table table-hove">
+        <tr>
+          <td>This is Typing program please type above paragraph.</td>
+        </tr>
+      </table>
+
     <section style='font-size:18px;'>
-     <textarea  autofocus> </textarea>
+     <textarea  autofocus class='inputArea' ></textarea>
     </section>
 
     </div>
