@@ -23,6 +23,7 @@ angular.module('persistentInterViewApp')
         self.PROGRESS_BAR_TYPE.SUCCESS = 'sucess';
         self.PROGRESS_BAR_TYPE.INFO = 'info';
         self.PROGRESS_BAR_TYPE.WARNING = 'warning';
+        self.PROGRESS_BAR_TYPE.ERROR = 'error';
         self.DEFAULT_MAX_TIME = 60;
         self.DEFAULT_INTERVAL = 1000;
         self.DEFAULT_TEXT = "One of the key components of this class is the Application portion of each Module. The Application takes the math and programming knowledge that you have learned in the first part of the Module and applies the knowledge in solving an interesting practical problem. Specifically, the goal of the Application is to encourage you to think.";  
@@ -32,7 +33,7 @@ angular.module('persistentInterViewApp')
   $scope.typedText = ''; 
   $scope.dynamic = self.DEFAULT_MAX_TIME;
   $scope.max = self.DEFAULT_MAX_TIME;
-  $scope.progessBarType = self.PROGRESS_BAR_TYPE.INFO;
+  $scope.progessBarType = self.PROGRESS_BAR_TYPE.WARNING;
   $scope.timerRunning = false;
   $scope.timeoutId = false;
   $scope.currectWrdCount = 0;
