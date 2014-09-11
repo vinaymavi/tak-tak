@@ -25,10 +25,10 @@ angular.module('persistentInterViewApp')
         self.PROGRESS_BAR_TYPE.WARNING = 'warning';
         self.DEFAULT_MAX_TIME = 60;
         self.DEFAULT_INTERVAL = 1000;
-
+        self.DEFAULT_TEXT = "One of the key components of this class is the Application portion of each Module. The Application takes the math and programming knowledge that you have learned in the first part of the Module and applies the knowledge in solving an interesting practical problem. Specifically, the goal of the Application is to encourage you to think.";  
 
   $scope.imagesDesc =  imageDesc.get();  
-  $scope.dataTextArr = "One of the key components of this class is the Application portion of each Module. The Application takes the math and programming knowledge that you have learned in the first part of the Module and applies the knowledge in solving an interesting practical problem. Specifically, the goal of the Application is to encourage you to think.".split(' ');  
+  $scope.dataTextArr = self.DEFAULT_TEXT.split(' ');  
   $scope.typedText = ''; 
   $scope.dynamic = self.DEFAULT_MAX_TIME;
   $scope.max = self.DEFAULT_MAX_TIME;
@@ -40,7 +40,7 @@ angular.module('persistentInterViewApp')
   $scope.currectKeyStrock = 0;
   $scope.wrongKeyStrock = 0;
   $scope.testDone = false;
-
+  $scope.wpm = 0;
   $scope.keypress = function(event){
     appMode = self.APP_MODE.WRITE;   //TODO appMode should have getter and setter.
     $scope.typedText = $scope.typedText + String.fromCharCode(event.which);     
@@ -97,13 +97,36 @@ angular.module('persistentInterViewApp')
       $scope.timerRunning = true;
      $scope.timeoutId = $timeout(function(){
         $scope.dynamic--;        
-        if($scope.dynamic <= 0){
-          clearTimeout($scope.timeoutId);
-         $scope.testDone = true;          
-        }          
+        if($scope.dynamic <= 0)
+        testDone();          
         else
         calculateTime();
       },self.DEFAULT_INTERVAL);
+    }
+
+    function testDone(){
+      clearTimeout($scope.timeoutId);
+      $scope.wpm = Math.floor($scope.currectKeyStrock/5);
+      $scope.testDone = true;          
+      angular.element('.inputArea').attr('disabled',true);      
+      angular.element('.restart-btn').removeAttr('disabled');
+    }
+
+    $scope.restart = function(){
+      $scope.testDone = false;
+      $scope.timerRunning =false;
+      $scope.currectWrdCount = 0;
+      $scope.wrongWrdCount = 0;
+      $scope.currectKeyStrock = 0;
+      $scope.wrongKeyStrock = 0;
+      $scope.wpm = 0; 
+      $scope.dynamic = self.DEFAULT_MAX_TIME;
+      $scope.dataTextArr = [];      
+      $scope.dataTextArr = self.DEFAULT_TEXT.split(' ');  
+      angular.element('.restart-btn').attr('disabled',true);      
+      angular.element('.inputArea').removeAttr('disabled').val('');
+      angular.element('.text-area span').removeClass('rightWrd wrongWrd currentWrd');
+      currentIndex = 0;
     }
 
   });

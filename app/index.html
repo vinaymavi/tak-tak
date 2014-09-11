@@ -61,7 +61,7 @@
       <hr/>
      </section>
 
-    <progressbar class="progress-striped active" max="max" type='{{progessBarType}}' value="dynamic"><span style="color:black; white-space:nowrap;">{{dynamic}} / {{max}}</span></progressbar>
+    <progressbar class="progress-striped active" max="max" type='{{progessBarType}}' value="dynamic"><span style="color:black; white-space:nowrap;">{{dynamic}} / {{max}} Seconds</span></progressbar>
 
     <section class='text-area'>      
       <span ng-repeat="dataText in dataTextArr track by $index" >{{dataText}}           
@@ -70,14 +70,44 @@
     <br/>
 
     <section style='font-size:18px;'>
-     <input type='text'  autofocus class='inputArea form-control' placeholder='Start Typing here............'/>
+      <div class="row">
+        <div class="col-lg-8 col-md-8 col-sm-12 col-xs-12">
+          <input type='text'  autofocus class='inputArea form-control'  placeholder='Start Typing here............'/>
+        </div>
+        <div class="col-lg-4 col-sm-4 col-sm-12 col-xs-12">
+          <button class='btn btn-primary form-control restart-btn' ng-click="restart()" disabled>Restart</button>
+        </div>
+      </div>
+     
+     
     </section>
     
     <section class='row' ng-show='testDone'>
-      <div class='col-lg-3'>{{currectKeyStrock/5}}</div>
-      <div class='col-lg-3'>{{currectWrdCount}},{{wrongWrdCount}}</div>
-      <div class='col-lg-3'>{{currectKeyStrock}}</div>
-      <div class='col-lg-3'>{{wrongKeyStrock}}</div>
+      <div class="col-lg-4 col-md-4 hidden-sm hidden-xs"></div>
+      <div class="col-lg-4 col-md-4 col-sm-12 col-xs-12">
+         <table class="table table-hover">
+        <tr>
+          <td colspan='2' class='text-center'><b>Your Result</b></td>          
+        </tr>
+        <tr>
+          <td>W.P.M</td>
+          <td>{{wpm}}</td>
+        </tr>
+        <tr>
+          <td>Currect Key Strock/Wrong Key Strock</td>
+          <td>{{currectKeyStrock}}/{{wrongKeyStrock}}</td>
+        </tr>
+        <tr>
+          <td>Currect Word</td>
+          <td>{{currectWrdCount}}</td>
+        </tr>
+        <tr>
+          <td>Wrong Word</td>
+          <td>{{wrongWrdCount}}</td>
+        </tr>
+      </table>  
+      </div>
+      <div class="col-lg-4 col-md-4 hidden-sm hidden-xs"></div>         
     </section>
     </div>
 
