@@ -45,7 +45,11 @@
         background-color: rgba(218, 177, 14, 0.5);
         color: black;          
       }
-
+      .chart {
+       width: 100%;
+       height: 150px;
+       clear: both;
+      }
     </style>
   </head>
   <body ng-app="persistentInterViewApp" ng-controller="MainCtrl" ng-keydown ="keydown($event)"  ng-keypress="keypress($event)">
@@ -54,15 +58,18 @@
     <![endif]-->
 
     <!-- Add your site or application content here -->
-    <div class="container">
-
+    <div class="container">  
      <section class='header'>
       <h1>Tak-Tak<span style='font-size:14px'> beta </span></h1>
       <hr/>
      </section>
-
-    <progressbar class="progress-striped active" max="max" type='{{progessBarType}}' value="dynamic"><span style="color:black; white-space:nowrap;">{{dynamic}} / {{max}} Seconds</span></progressbar>
-
+       <progressbar class="progress-striped active" max="max" type='{{progessBarType}}' value="dynamic"><span style="color:black; white-space:nowrap;">{{dynamic}} / {{max}} Seconds</span></progressbar>
+  <div 
+    data-ac-chart="'line'" 
+    data-ac-data="data" 
+    data-ac-config="config" 
+    class="chart">
+  </div>  
     <section class='text-area'>      
       <span ng-repeat="dataText in dataTextArr track by $index" >{{dataText}}           
       </span>
@@ -117,7 +124,7 @@
     <script src="bower_components/json3/lib/json3.js"></script>
     <![endif]-->
     <!-- endbuild -->
-      <script>
+      <!--script>
       (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
       (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
       m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
@@ -126,7 +133,7 @@
       ga('create', 'UA-55397803-1', 'auto');
       ga('send', 'pageview');
 
-      </script>
+      </script-->
 
     <!-- build:js(.) scripts/vendor.js -->
     <!-- bower:js -->
@@ -135,6 +142,8 @@
     <script src="bower_components/bootstrap/dist/js/bootstrap.js"></script>
     <script src="bower_components/angular-bootstrap/ui-bootstrap-tpls.js"></script>
     <script src="bower_components/angular-resource/angular-resource.js"></script>
+    <script src="bower_components/d3/d3.js"></script>
+    <script src="bower_components/angular-charts/dist/angular-charts.js"></script>
     <!-- endbower -->
     <!-- endbuild -->
 

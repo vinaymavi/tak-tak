@@ -25,7 +25,7 @@ angular.module('persistentInterViewApp')
         self.PROGRESS_BAR_TYPE.WARNING = 'warning';
         self.PROGRESS_BAR_TYPE.ERROR = 'error';
         self.DEFAULT_MAX_TIME = 60;
-        self.DEFAULT_INTERVAL = 1000;
+        self.DEFAULT_INTERVAL = 800;
         self.DEFAULT_TEXT = "One of the key components of this class is the Application portion of each Module. The Application takes the math and programming knowledge that you have learned in the first part of the Module and applies the knowledge in solving an interesting practical problem. Specifically, the goal of the Application is to encourage you to think.";  
 
   $scope.imagesDesc =  imageDesc.get();  
@@ -129,5 +129,207 @@ angular.module('persistentInterViewApp')
       angular.element('.text-area span').removeClass('rightWrd wrongWrd currentWrd');
       currentIndex = 0;
     }
+    
+  $scope.config = {
+    title: 'W.P.M',
+    tooltips: true,
+    labels: false,
+    mouseover: function() {},
+    mouseout: function() {},
+    click: function() {},
+    legend: {
+      display: true,
+      //could be 'left, right'
+      position: 'right'
+    }
+  };
+
+  $scope.data = {
+    series: ['v'],
+    data: [{
+      x: "1",
+      y: [60]
+    }, {
+      x: "2",
+      y: [65]
+    }, {
+      x: "2",
+      y: [70]
+    }, {
+      x: "3",
+      y: [80]
+    }, {
+      x: "4",
+      y: [0]
+    },{
+      x: "5",
+      y: [0]
+    },{
+      x: "6",
+      y: [0]
+    }, {
+      x: "7",
+      y: [65]
+    }, {
+      x: "8",
+      y: [70]
+    }, {
+      x: "9",
+      y: [80]
+    }, {
+      x: "10",
+      y: [0]
+    },{
+      x: "11",
+      y: [0]
+    },{
+      x: "12",
+      y: [0]
+    }, {
+      x: "13",
+      y: [65]
+    }, {
+      x: "14",
+      y: [70]
+    }, {
+      x: "15",
+      y: [80]
+    }, {
+      x: "16",
+      y: [0]
+    },{
+      x: "17",
+      y: [0]
+    },{
+      x: "18",
+      y: [0]
+    }, {
+      x: "19",
+      y: [65]
+    }, {
+      x: "20",
+      y: [70]
+    }, {
+      x: "21",
+      y: [80]
+    }, {
+      x: "22",
+      y: [0]
+    },{
+      x: "23",
+      y: [0]
+    },{
+      x: "24",
+      y: [0]
+    }, {
+      x: "25",
+      y: [65]
+    }, {
+      x: "26",
+      y: [70]
+    }, {
+      x: "27",
+      y: [80]
+    }, {
+      x: "28",
+      y: [0]
+    },{
+      x: "29",
+      y: [0]
+    },{
+      x: "30",
+      y: [0]
+    }, {
+      x: "31",
+      y: [65]
+    }, {
+      x: "32",
+      y: [70]
+    }, {
+      x: "33",
+      y: [80]
+    }, {
+      x: "34",
+      y: [0]
+    },{
+      x: "35",
+      y: [0]
+    },{
+      x: "36",
+      y: [0]
+    }, {
+      x: "37",
+      y: [65]
+    }, {
+      x: "38",
+      y: [70]
+    }, {
+      x: "39",
+      y: [80]
+    }, {
+      x: "40",
+      y: [0]
+    },{
+      x: "41",
+      y: [0]
+    },{
+      x: "42",
+      y: [0]
+    }, {
+      x: "43",
+      y: [65]
+    }, {
+      x: "44",
+      y: [70]
+    }, {
+      x: "45",
+      y: [80]
+    }, {
+      x: "46",
+      y: [0]
+    },{
+      x: "47",
+      y: [0]
+    },{
+      x: "48",
+      y: [0]
+    }, {
+      x: "49",
+      y: [65]
+    }, {
+      x: "50",
+      y: [70]
+    }, {
+      x: "51",
+      y: [80]
+    }, {
+      x: "52",
+      y: [0]
+    },{
+      x: "53",
+      y: [0]
+    },{
+      x: "54",
+      y: [0]
+    }, {
+      x: "55",
+      y: [65]
+    }, {
+      x: "56",
+      y: [70]
+    }, {
+      x: "57",
+      y: [80]
+    }, {
+      x: "58",
+      y: [0]
+    },{
+      x: "59",
+      y: [0]
+    },{
+      x: "60",
+      y: [0]
+    }]
+  };
 
   });

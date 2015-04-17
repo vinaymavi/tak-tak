@@ -9,4 +9,4 @@
  * Main module of the application.
  */
 angular
-  .module('persistentInterViewApp', ['ui.bootstrap','ngResource']);
+  .module('persistentInterViewApp', ['ui.bootstrap','ngResource','angularCharts']);
